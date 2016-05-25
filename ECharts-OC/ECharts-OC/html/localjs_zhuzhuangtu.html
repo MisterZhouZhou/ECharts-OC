@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript">
+        function ZZT(legend,listX,showNum){
+            var showLegend ;
+            if(legend ){
+                alert(legend);
+                showLegend = true;
+            }
+            // 基于准备好的dom，初始化echarts图表
+            var myChart = echarts.init(document.getElementById("main"));
+            var option={
+                tooltip:{
+                    show:showLegend
+                },
+                legend:{
+                    data:[legend]
+                },
+                xAxis:[{
+                       type:'category',//默认为类目
+                       data : listX
+                       }],
+                       yAxis : [
+                                {
+                                type : 'value'//默认为值类型
+                                }
+                                ],
+                       series : [{
+                                  "name":legend,
+                                  "type":"bar",
+                                  "data":showNum
+                                  }
+                                  ]
+            };
+            // 为echarts对象加载数据
+            myChart.setOption(option);
+        }
+    function divframe(x,y,wid,hei){
+        var divMain = document.getElementById("main");
+        if(divMain){
+            divMain.style.marginTop =y+"px";
+            divMain.style.marginLeft =x+"px"
+            divMain.style.width = wid+"px";
+            divMain.style.height = hei+"px";
+        }
+        
+    }
+    </script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" ></div>
+<!-- ECharts单文件引入 -->
+<script src="echarts/build/dist/echarts-all.js"></script>
+
+</body>
+</html>
