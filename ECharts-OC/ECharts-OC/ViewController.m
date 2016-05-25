@@ -7,26 +7,83 @@
 //
 
 #import "ViewController.h"
-#import "ZWWebViewManager.h"
-@interface ViewController ()
+#import "ZWZZTViewController.h"
+#import "ZWZXTViewController.h"
+@interface ViewController ()<UITableViewDelegate,UITableViewDataSource>
+/*MainTableView*/
+@property(nonatomic,strong)UITableView *listTableView;
 
+/*数据源*/
+@property(nonatomic,strong)NSArray *dataArray;
 @end
 
+NSString *const cellID = @"cell";
+
 @implementation ViewController
+
+#pragma mark - 懒加载
+-(UITableView *)listTableView{
+    if (_listTableView == nil) {
+        _listTableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, self.view.bounds.size.height -20) style:UITableViewStylePlain];
+    }
+    return _listTableView;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
 
-    ZWWebViewManager *manager = [[ZWWebViewManager alloc]initWithFrame:CGRectMake(-50, 50, 400, 400)];
+    //设置标题
+    self.title = @"图表列表";
     
-//    [manager createZhuZhuangTuWithLegend:@"销量" ValueX:@[@"衬衫",@"羊毛衫",@"雪纺衫",@"裤子",@"高跟鞋",@"袜子"] showNumber:@[@5, @20, @40, @10, @10, @20]  margin:CGRectMake(-10, -10, 400, 400)];
-    
-    [manager createZhuZhuangTuWithLegend:nil ValueX:@[@"衬衫",@"羊毛衫",@"雪纺衫",@"裤子",@"高跟鞋",@"袜子"] showNumber:@[@5, @20, @40, @10, @10, @20]];
-    [self.view addSubview:manager];
-    
+    self.listTableView.dataSource = self;
+    self.listTableView.delegate = self;
+    [self.view addSubview:self.listTableView];
+    //去除tableview底部线
+    self.listTableView.tableFooterView = [UIView new];
+    self.dataArray = @[@"柱状图",@"折线图"];
     
 }
+
+#pragma mark - UITableView Delegate
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return self.dataArray.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellID];
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellID];
+    }
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
+    cell.textLabel.text = self.dataArray[indexPath.row];
+    return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIViewController *baseVC ;
+    switch (indexPath.row) {
+        case 0:
+            baseVC = [[ZWZZTViewController alloc]init];
+            break;
+        case 1:
+            baseVC = [[ZWZXTViewController alloc]init];
+            break;
+        default:
+            break;
+    }
+    [self.navigationController pushViewController:baseVC animated:YES];
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

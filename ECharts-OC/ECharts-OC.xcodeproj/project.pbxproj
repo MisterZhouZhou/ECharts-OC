@@ -14,9 +14,11 @@
 		A672294F1CF41C9700DE859A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A672294E1CF41C9700DE859A /* Assets.xcassets */; };
 		A67229521CF41C9700DE859A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A67229501CF41C9700DE859A /* LaunchScreen.storyboard */; };
 		A67233301CF41CFD00DE859A /* echarts in Resources */ = {isa = PBXBuildFile; fileRef = A672332F1CF41CFD00DE859A /* echarts */; };
-		A67233361CF41DD600DE859A /* ZWWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67233351CF41DD600DE859A /* ZWWebViewController.m */; };
+		A67233361CF41DD600DE859A /* ZWZZTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A67233351CF41DD600DE859A /* ZWZZTViewController.m */; };
 		A672333A1CF41E2200DE859A /* ZWWebViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A67233391CF41E2200DE859A /* ZWWebViewManager.m */; };
 		A672333D1CF43B7600DE859A /* localjs_zhuzhuangtu.html in Resources */ = {isa = PBXBuildFile; fileRef = A672333C1CF43B7600DE859A /* localjs_zhuzhuangtu.html */; };
+		A6BF3C021CF58C3500DEAEDB /* ZWZXTViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6BF3C011CF58C3500DEAEDB /* ZWZXTViewController.m */; };
+		A6BF3C041CF58FC400DEAEDB /* localjs_zhexiantu.html in Resources */ = {isa = PBXBuildFile; fileRef = A6BF3C031CF58FC400DEAEDB /* localjs_zhexiantu.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,11 +33,14 @@
 		A67229511CF41C9700DE859A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A67229531CF41C9700DE859A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A672332F1CF41CFD00DE859A /* echarts */ = {isa = PBXFileReference; lastKnownFileType = folder; path = echarts; sourceTree = "<group>"; };
-		A67233341CF41DD600DE859A /* ZWWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWWebViewController.h; sourceTree = "<group>"; };
-		A67233351CF41DD600DE859A /* ZWWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWWebViewController.m; sourceTree = "<group>"; };
+		A67233341CF41DD600DE859A /* ZWZZTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWZZTViewController.h; sourceTree = "<group>"; };
+		A67233351CF41DD600DE859A /* ZWZZTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWZZTViewController.m; sourceTree = "<group>"; };
 		A67233381CF41E2200DE859A /* ZWWebViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZWWebViewManager.h; sourceTree = "<group>"; };
 		A67233391CF41E2200DE859A /* ZWWebViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZWWebViewManager.m; sourceTree = "<group>"; };
 		A672333C1CF43B7600DE859A /* localjs_zhuzhuangtu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = localjs_zhuzhuangtu.html; sourceTree = "<group>"; };
+		A6BF3C001CF58C3500DEAEDB /* ZWZXTViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZWZXTViewController.h; path = "../../../../微博cell/微博cell/cell/model/ZWZXTViewController.h"; sourceTree = "<group>"; };
+		A6BF3C011CF58C3500DEAEDB /* ZWZXTViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ZWZXTViewController.m; path = "../../../../微博cell/微博cell/cell/model/ZWZXTViewController.m"; sourceTree = "<group>"; };
+		A6BF3C031CF58FC400DEAEDB /* localjs_zhexiantu.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = localjs_zhexiantu.html; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,8 +101,10 @@
 		A67233331CF41DAD00DE859A /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				A67233341CF41DD600DE859A /* ZWWebViewController.h */,
-				A67233351CF41DD600DE859A /* ZWWebViewController.m */,
+				A67233341CF41DD600DE859A /* ZWZZTViewController.h */,
+				A67233351CF41DD600DE859A /* ZWZZTViewController.m */,
+				A6BF3C001CF58C3500DEAEDB /* ZWZXTViewController.h */,
+				A6BF3C011CF58C3500DEAEDB /* ZWZXTViewController.m */,
 			);
 			path = controller;
 			sourceTree = "<group>";
@@ -115,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				A672333C1CF43B7600DE859A /* localjs_zhuzhuangtu.html */,
+				A6BF3C031CF58FC400DEAEDB /* localjs_zhexiantu.html */,
 			);
 			path = html;
 			sourceTree = "<group>";
@@ -178,6 +186,7 @@
 			files = (
 				A67229521CF41C9700DE859A /* LaunchScreen.storyboard in Resources */,
 				A67233301CF41CFD00DE859A /* echarts in Resources */,
+				A6BF3C041CF58FC400DEAEDB /* localjs_zhexiantu.html in Resources */,
 				A672333D1CF43B7600DE859A /* localjs_zhuzhuangtu.html in Resources */,
 				A672294F1CF41C9700DE859A /* Assets.xcassets in Resources */,
 				A672294D1CF41C9700DE859A /* Main.storyboard in Resources */,
@@ -193,8 +202,9 @@
 			files = (
 				A672333A1CF41E2200DE859A /* ZWWebViewManager.m in Sources */,
 				A672294A1CF41C9700DE859A /* ViewController.m in Sources */,
+				A6BF3C021CF58C3500DEAEDB /* ZWZXTViewController.m in Sources */,
 				A67229471CF41C9700DE859A /* AppDelegate.m in Sources */,
-				A67233361CF41DD600DE859A /* ZWWebViewController.m in Sources */,
+				A67233361CF41DD600DE859A /* ZWZZTViewController.m in Sources */,
 				A67229441CF41C9700DE859A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,6 +354,7 @@
 				A67229581CF41C9700DE859A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

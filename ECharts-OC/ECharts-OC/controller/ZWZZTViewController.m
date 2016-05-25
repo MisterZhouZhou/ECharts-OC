@@ -6,17 +6,24 @@
 //  Copyright © 2016年 rayootech. All rights reserved.
 //
 
-#import "ZWWebViewController.h"
-
-@interface ZWWebViewController ()
+#import "ZWZZTViewController.h"
+#import "ZWWebViewManager.h"
+@interface ZWZZTViewController ()
 
 @end
 
-@implementation ZWWebViewController
+@implementation ZWZZTViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    ZWWebViewManager *manager = [[ZWWebViewManager alloc]initWithFrame:CGRectMake(0, 0, 450, 450)];
+    
+//        [manager createZhuZhuangTuWithLegend:@"销量" ValueX:@[@"衬衫",@"羊毛衫",@"雪纺衫",@"裤子",@"高跟鞋",@"袜子"] showNumber:@[@5, @20, @40, @10, @10, @20]  margin:CGRectMake(-10, -10, 400, 400)];
+    
+    [manager createZhuZhuangTuWithLegend:@"销量" ValueX:@[@"衬衫",@"羊毛衫",@"雪纺衫",@"裤子",@"高跟鞋",@"袜子"] showNumber:@[@5, @20, @40, @10, @10, @20]];
+    [self.view addSubview:manager];
 }
 
 - (void)didReceiveMemoryWarning {

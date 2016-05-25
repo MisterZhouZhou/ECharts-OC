@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script type="text/javascript">
+        function ZXT(text,subtext,legend,showTool,listX,data1,data2){
+            // 基于准备好的dom，初始化echarts图表
+            var myChart = echarts.init(document.getElementById("main"));
+            var option = {
+                title : {
+                    text: text,
+                    subtext: subtext
+                },
+                tooltip : {
+                    trigger: 'axis'
+                },
+                legend: {
+                    data:legend
+                },
+                //右上角工具条
+                toolbox: {
+                    show : showTool,
+                    feature : {
+                        mark : {show: true},
+                        dataView : {show: true, readOnly: false},
+                        magicType : {show: true, type: ['line', 'bar']},
+                        restore : {show: true},
+                        saveAsImage : {show: true}
+                    }
+                },
+                calculable : true,
+                xAxis : [
+                         {
+                         type : 'category',
+                         boundaryGap : false,
+                         data : listX
+                         }
+                         ],
+                         yAxis : [
+                                  {
+                                  type : 'value',
+                                  axisLabel : {
+                                  formatter: '{value} °C'
+                                  }
+                                  }
+                                  ],
+                          series : [
+                                    {
+                                    name:legend[0],
+                                    type:'line',
+                                    data:data1,
+                                    markPoint : {
+                                    data : [
+                                            {type : 'max', name: '最大值'},
+                                            {type : 'min', name: '最小值'}
+                                            ]
+                                    },
+                                    markLine : {
+                                    data : [
+                                            {type : 'average', name: '平均值'}
+                                            ]
+                                    }
+                                    },
+                                    {
+                                    name:legend[1],
+                                    type:'line',
+                                    data:data2,
+                                    markPoint : {
+                                    data : [
+                                            //                        {name : '周最低', value : -2, xAxis: 1, yAxis: -1.5}
+                                            {type : 'min', name: '周最低'}
+                                            ]
+                                    },
+                                    markLine : {
+                                    data : [
+                                            {type : 'average', name : '平均值'}
+                                            ]
+                                    }
+                                    }
+                                    ]
+            };
+            
+            // 为echarts对象加载数据
+            myChart.setOption(option);
+        }
+    
+    function divframe(x,y,wid,hei){
+        var divMain = document.getElementById("main");
+        if(divMain){
+            divMain.style.marginTop =y+"px";
+            divMain.style.marginLeft =x+"px"
+            divMain.style.width = wid+"px";
+            divMain.style.height = hei+"px";
+        }
+        
+    }
+    </script>
+</head>
+<body>
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="height:400px;width: 600px"></div>
+<!-- ECharts单文件引入 -->
+<script src="echarts/build/dist/echarts-all.js"></script>
+
+</script>
+</body>
+</html>
